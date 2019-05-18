@@ -1,0 +1,48 @@
+<link rel="stylesheet" type="text/css" href="/UI.css">
+<div class="topnav">
+    <a  href="/">Home</a>
+    <a class="active" href="./resort">Resort List</a>
+    <a href="./resortAddress">Address Table Interactions</a>
+    <a href="./run">Run Table Interaction</a>
+    <a href="./lift">Lift Table Interaction</a>
+</div>
+
+<h2>Ski Resort input CS340 project</h2>
+<h4>Please insert your resort data (a table will display)</h4>
+<div id="actIn" class = actIn>
+    <form method="post" style="padding: 10px">
+        <input placeholder="Name" type="text" name="street" id="name">
+        <input placeholder="Elevation" type="text" name="city" id="elevation">
+        <input placeholder="Snowfall" type="text" name="state" id="snowfall">
+        <input type="submit" name="Add Item" value="Add Item" id="addItem">
+    </form>
+
+</div>
+<div id="dropDownResortHolder">
+</div>
+
+
+
+<div id="Fixed">
+    <table id="outTable" class = Fixed style="background-color: darkgray; border-radius: 20px; padding: 10px">
+    </table>
+</div>
+<div id="updateHold">
+</div>
+<div id="addressResortAdd">
+    This form will associate an address with a resort
+    <form>
+        Select the resort:
+        <select id="resortList">
+
+        </select>
+
+        Select the address:
+        <select id="addressList">
+
+        </select>
+        <input type="submit" name="update Address" value="Update Address" id="updateAddress">
+    </form>
+</div>
+
+<script src="resortTable.js"></script>

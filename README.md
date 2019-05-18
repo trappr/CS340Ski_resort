@@ -1,4 +1,7 @@
 # CS340Ski_resort
 
-to run either use forever dataBase.js to allow persistance or use node dataBase.js
+Clone rep into a new location on the server
 
+run npm install to install the dependncies
+
+to run site either use forever dataBase.js 9879 to allow persistance or use node dataBase.js 9879

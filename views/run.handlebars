@@ -1,0 +1,54 @@
+<link rel="stylesheet" type="text/css" href="/UI.css">
+<div class="topnav">
+    <a  href="/">Home</a>
+    <a href="./resort">Resort List</a>
+    <a href="./resortAddress">Address Table Interactions</a>
+    <a class="active" href="./run">Run Table Interaction</a>
+    <a href="./lift">Lift Table Interaction</a>
+</div>
+
+<h2>Ski Resort input CS340 project</h2>
+<h4>Please insert run data (a table will display)</h4>
+<div id="actIn" class = actIn>
+    <form method="post" style="padding: 10px">
+        <input placeholder="Name" type="text" name="name" id="name">
+        <select name="class" id="class">
+            <option value="Green">Green</option>
+            <option value="Blue">Blue</option>
+            <option value="Black">Black</option>
+            <option value="doubleBlack">Double Black</option>
+            <option value="BC">Backcountry</option>
+        </select>
+        Groomed?<input placeholder="Groomed" type="checkbox" name="groomed" id="groomed">
+        <input type="submit" name="Add Item" value="Add Item" id="addItem">
+    </form>
+
+</div>
+<div id="dropDownRunHolder">
+</div>
+
+
+
+<div id="Fixed">
+    <table id="outTable" class = Fixed style="background-color: darkgray; border-radius: 20px; padding: 10px">
+    </table>
+</div>
+<div id="updateHold">
+</div>
+<div id="resortRunAdd">
+    This form will associate a resort with a run
+    <form>
+        Select the resort:
+        <select id="resortList">
+
+        </select>
+
+        Select the run:
+        <select id="runList">
+
+        </select>
+        <input type="submit" name="update RunResort" value="Update Resort" id="updateRunResort">
+    </form>
+</div>
+
+<script src="runTable.js"></script>

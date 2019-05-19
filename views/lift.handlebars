@@ -1,0 +1,48 @@
+<link rel="stylesheet" type="text/css" href="/UI.css">
+<div class="topnav">
+    <a  href="/">Home</a>
+    <a href="./resort">Resort List</a>
+    <a href="./resortAddress">Address Table Interactions</a>
+    <a href="./run">Run Table Interaction</a>
+    <a class="active" href="./lift">Lift Table Interaction</a>
+</div>
+
+<h2>Ski Resort input CS340 project</h2>
+<h4>Please insert lift data (a table will display)</h4>
+<div id="actIn" class = actIn>
+    <form method="post" style="padding: 10px">
+        <input placeholder="Name" type="text" name="name" id="name">
+        <input placeholder="Chairs" type="number" name="chairs" min="0" max="10" id="chairs">
+        Top?<input placeholder="Top" type="checkbox" name="top" id="top">
+        <input type="submit" name="Add Item" value="Add Item" id="addItem">
+    </form>
+
+</div>
+<div id="dropDownLiftHolder">
+</div>
+
+
+
+<div id="Fixed">
+    <table id="outTable" class = Fixed style="background-color: darkgray; border-radius: 20px; padding: 10px">
+    </table>
+</div>
+<div id="updateHold">
+</div>
+<div id="resortLiftAdd">
+    This form will associate a resort with a lift
+    <form>
+        Select the resort:
+        <select id="resortList">
+
+        </select>
+
+        Select the lift:
+        <select id="liftList">
+
+        </select>
+        <input type="submit" name="update LiftResort" value="Update Resort" id="updateLiftResort">
+    </form>
+</div>
+
+<script src="liftTable.js"></script>

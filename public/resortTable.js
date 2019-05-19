@@ -1,7 +1,7 @@
 
 function getTable (){
 let req = new XMLHttpRequest();
-req.open('GET','http://flip3.engr.oregonstate.edu:9879/resort/table', true);
+req.open('GET','http://flip3.engr.oregonstate.edu:8585/resort/table', true);
 req.addEventListener('load',function(){
     if(req.status >= 200 && req.status < 400){
         let response = JSON.parse(req.responseText);
@@ -54,7 +54,7 @@ function makeTable (responseText){
         let payload = {id: null};
         payload.id = responseText[para].address_ID;
         let req = new XMLHttpRequest();
-        req.open('GET', 'http://flip3.engr.oregonstate.edu:9879/resortAddress/getvalue?id='+payload.id, true);
+        req.open('GET', 'http://flip3.engr.oregonstate.edu:8585/resortAddress/getvalue?id='+payload.id, true);
         req.addEventListener('load',function() {
             if (req.status >= 200 && req.status < 400) {
                 let response = JSON.parse(req.responseText);
@@ -75,7 +75,7 @@ function makeTable (responseText){
             let req = new XMLHttpRequest();
             let payload = {id: null};
             payload.id = buttonDelete.value;
-            req.open('POST', 'http://flip3.engr.oregonstate.edu:9879/resort/simple-delete', true);
+            req.open('POST', 'http://flip3.engr.oregonstate.edu:8585/resort/simple-delete', true);
            req.setRequestHeader('Content-Type', 'application/json');
            req.addEventListener('load',function(){
                if(req.status >= 200 && req.status < 400){
@@ -103,7 +103,7 @@ function makeTable (responseText){
             let req = new XMLHttpRequest();
             let payload = {id: null};
             payload.id = buttonUpdate.value;
-            req.open('GET', 'http://flip3.engr.oregonstate.edu:9879/resort/getvalue?id='+payload.id, true);
+            req.open('GET', 'http://flip3.engr.oregonstate.edu:8585/resort/getvalue?id='+payload.id, true);
             req.addEventListener('load',function(){
                 if(req.status >= 200 && req.status < 400){
                     let response = JSON.parse(req.responseText);
@@ -138,7 +138,7 @@ function makeTable (responseText){
                         payload.elevation = document.getElementById('elevationUpdate').value;
                         payload.snowfall = document.getElementById('snowfallUpdate').value;
                         payload.id = valuesHolder[0].id;
-                        req.open('POST', 'http://flip3.engr.oregonstate.edu:9879/resort/simple-update', true);
+                        req.open('POST', 'http://flip3.engr.oregonstate.edu:8585/resort/simple-update', true);
                         req.setRequestHeader('Content-Type', 'application/json');
                         req.addEventListener('load',function(){
                             if(req.status >= 200 && req.status < 400){
@@ -179,7 +179,7 @@ function bindButtons() {
         payload.name = document.getElementById('name').value;
         payload.elevation = document.getElementById('elevation').value;
         payload.snowfall = document.getElementById('snowfall').value;
-        req.open('POST', 'http://flip3.engr.oregonstate.edu:9879/resort/insert', true);
+        req.open('POST', 'http://flip3.engr.oregonstate.edu:8585/resort/insert', true);
         console.log(payload);
         req.setRequestHeader('Content-Type', 'application/json');
         req.addEventListener('load',function(){
@@ -202,7 +202,7 @@ function bindButtons() {
         let payload = {resort: null, address: null};
         payload.resort = document.getElementById('resortList').value;
         payload.address = document.getElementById('addressList').value;
-        req.open('POST', 'http://flip3.engr.oregonstate.edu:9879/resort/addressUpdate', true);
+        req.open('POST', 'http://flip3.engr.oregonstate.edu:8585/resort/addressUpdate', true);
         req.setRequestHeader('Content-Type', 'application/json');
         req.addEventListener('load',function(){
             if(req.status >= 200 && req.status < 400){
@@ -215,13 +215,13 @@ function bindButtons() {
         req.send(JSON.stringify(payload));
 
         event.preventDefault();
-    })
+    });
 
 }
 
 function reguestAddressNames(location){
     let req = new XMLHttpRequest();
-    req.open('GET','http://flip3.engr.oregonstate.edu:9879/resort/getAddress', true);
+    req.open('GET','http://flip3.engr.oregonstate.edu:8585/resort/getAddress', true);
     req.addEventListener('load',function(){
         if(req.status >= 200 && req.status < 400){
             let response = JSON.parse(req.responseText);
@@ -250,7 +250,7 @@ reguestAddressNames("addressList");
 
 function reguestResortNames(location){
     let req = new XMLHttpRequest();
-    req.open('GET','http://flip3.engr.oregonstate.edu:9879/resort/getAllResortName', true);
+    req.open('GET','http://flip3.engr.oregonstate.edu:8585/resort/getAllResortName', true);
     req.addEventListener('load',function(){
         if(req.status >= 200 && req.status < 400){
             let response = JSON.parse(req.responseText);
